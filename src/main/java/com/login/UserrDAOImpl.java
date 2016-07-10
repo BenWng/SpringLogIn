@@ -18,6 +18,10 @@ import java.util.*;
  * Created by Ben_Big on 7/8/16.
  */
 
+/*
+reference: http://stackoverflow.com/questions/14268451/spring-security-userdetailsservice-implementation-login-fails
+ */
+
 
 @Component
 public class UserrDAOImpl implements UserrDAO, UserDetailsService {

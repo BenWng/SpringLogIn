@@ -1,5 +1,6 @@
 package com.login;
 
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
-
+import org.springframework.security.core.userdetails.User;
 /**
  * Created by Ben_Big on 7/7/16.
  */
@@ -29,6 +30,9 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
 
+    @Autowired
+    private UserrDAOImpl userrDAO;
+
 
     public SecurityJavaConfig(){
         super();
@@ -38,13 +42,14 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter{
     protected  void configure(final AuthenticationManagerBuilder auth)
         throws Exception{
 
-        /*auth.userDetailsService()*/
 
-        auth.inMemoryAuthentication()
+        auth.userDetailsService(userrDAO);
+
+        /*auth.inMemoryAuthentication()
                 .withUser("temporary").password("temporary").roles("ADMIN")
                 .and()
                 .withUser("AlabamaMan").password("userPass").roles("USER")
-                ;
+                ;*/
 
     }
 
