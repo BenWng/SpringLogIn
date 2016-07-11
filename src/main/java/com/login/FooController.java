@@ -35,6 +35,7 @@ public class FooController {
 
         Authentication auth= SecurityContextHolder.getContext().getAuthentication();
         String name=auth.getName();
+        System.out.println(name);
         return "HelloWorld\n";
     }
 

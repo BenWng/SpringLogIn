@@ -17,6 +17,17 @@ A demo project showing how to do basic login with cookies in Spring
 ###To Login:
 
 1. curl -i -X POST -d username=Tom -d password=haha http://localhost:8080/login     (Tom is a user stored in database)
+
+2. curl -i -X POST -d username=Tom -d password=haha -c ./cookies.txt http://localhost:8080/login (To store cookie)
+
+3. curl -i --header "Accept:application/json" -X GET -b ./cookies.txt http://localhost:8080/api/foos
+
+
+
+
+
+
+
  
 
 
