@@ -66,7 +66,7 @@ public class UserrDAOImpl implements UserrDAO, UserDetailsService {
     //
     public Collection<? extends GrantedAuthority> getAuthorities(){
         List<GrantedAuthority> authList=new ArrayList<>();
-        authList.add(new SimpleGrantedAuthority("user"));
+        authList.add(new SimpleGrantedAuthority("USER"));
         return authList;
     }
 
