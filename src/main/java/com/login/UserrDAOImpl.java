@@ -51,6 +51,14 @@ public class UserrDAOImpl implements UserrDAO, UserDetailsService {
         boolean accountNonLocked=true;
         boolean accountIsEnabled=true;
 
+
+        List<GrantedAuthority> authList=new ArrayList<>();
+        authList.add(new SimpleGrantedAuthority("USER"));
+        if (u.isAdmin()){
+            authList.add(new SimpleGrantedAuthority("ADMIN"));
+        }
+
+
         return new User(
                 u.getName(),
                 u.getPassword(),
@@ -58,16 +66,8 @@ public class UserrDAOImpl implements UserrDAO, UserDetailsService {
                 accountNonExpired,
                 credentialNonExpired,
                 accountNonLocked,
-                getAuthorities()
+                authList
                 );
-
-    }
-
-    //
-    public Collection<? extends GrantedAuthority> getAuthorities(){
-        List<GrantedAuthority> authList=new ArrayList<>();
-        authList.add(new SimpleGrantedAuthority("USER"));
-        return authList;
     }
 
 

@@ -21,6 +21,7 @@ public class Userr implements Serializable{
 
     private String name;
     private String password;
+    private boolean isAdmin;
 
 
     public String getName() {return name;}
@@ -35,5 +36,13 @@ public class Userr implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
     }
 }

@@ -63,7 +63,7 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter{
                 .authorizeRequests()
                 .antMatchers("/api/foos").authenticated()
                 .antMatchers("/api/bars").authenticated()
-                .antMatchers("/api/user").hasAuthority("USER")
+                .antMatchers("/api/user").hasAuthority("ADMIN")
                 .and()
                 .formLogin()
                 .successHandler(authenticationSuccessHandler)
