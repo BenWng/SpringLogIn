@@ -64,6 +64,7 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/foos").authenticated()
                 .antMatchers("/api/bars").authenticated()
                 .antMatchers("/user").hasAuthority("ADMIN")
+                .anyRequest().permitAll()
                 .and()
                 .formLogin()
                 .successHandler(authenticationSuccessHandler)

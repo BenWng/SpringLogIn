@@ -28,8 +28,13 @@
         <servlet-name>api</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
-            <param-name>throwExceptionIfNoHandlerFound</param-name>
-            <param-value>true</param-value>
+            <!--<param-name>throwExceptionIfNoHandlerFound</param-name>
+            <param-value>true</param-value>-->
+
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/bloody-config.xml</param-value>
+
+
         </init-param>
     </servlet>
     <servlet-mapping>
