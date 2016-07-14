@@ -20,7 +20,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint{
     public void commence(final HttpServletRequest request , final HttpServletResponse response, final AuthenticationException authenticationException)
             throws IOException
     {
-        response.sendError(HttpServletResponse.SC_ACCEPTED,"Unauthorized");
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Unauthorized");
 
     }
 }
