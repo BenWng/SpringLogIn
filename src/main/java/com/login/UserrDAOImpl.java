@@ -60,7 +60,7 @@ public class UserrDAOImpl implements UserrDAO, UserDetailsService {
 
 
         return new User(
-                u.getName(),
+                u.getEmail(),
                 u.getPassword(),
                 accountIsEnabled,
                 accountNonExpired,
