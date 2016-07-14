@@ -22,6 +22,7 @@ public class Userr implements Serializable{
     private String name;
     private String password;
     private boolean isAdmin;
+    private String email;
 
 
     public String getName() {return name;}
@@ -44,5 +45,13 @@ public class Userr implements Serializable{
 
     public boolean isAdmin() {
         return isAdmin;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
