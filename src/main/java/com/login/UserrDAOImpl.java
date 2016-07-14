@@ -34,7 +34,7 @@ public class UserrDAOImpl implements UserrDAO, UserDetailsService {
     throws UsernameNotFoundException
     {
         Userr u=null;
-        Query query=entityManager.createQuery("select u from Userr u where u.eamil=:E");
+        Query query=entityManager.createQuery("select u from Userr u where u.email=:E");
         query.setParameter("E",email);
         List<Userr> userrList=query.getResultList();
         Iterator<Userr> itr=userrList.iterator();
@@ -42,7 +42,7 @@ public class UserrDAOImpl implements UserrDAO, UserDetailsService {
             u=itr.next();
         }
         else{
-            throw new UsernameNotFoundException("No such user:"+email);
+            throw new UsernameNotFoundException("No such user with such email address: "+email);
         }
 
         // boolean fields required for User (the one in security.core.userdetails.User)
