@@ -20,12 +20,9 @@ A demo project showing how to do basic login with cookies in Spring
 
 2. curl -i -X POST -d username=Tom -d password=haha -c ./cookies.txt http://localhost:8080/login (To store cookie)
 
-3. curl -i --header "Accept:application/json" -X GET -b ./cookies.txt http://localhost:8080/api/foos
+3. curl -i --header "Accept:application/json" -X GET -b ./cookies.txt http://localhost:8080/foos
 	
-	This would return 200 if the cookie is correct, 202 if not cookie is in the GET call
-	
-	
-
+	This would return 200 if the cookie is correct, 401 if not cookie is in the GET call
 
 
 
