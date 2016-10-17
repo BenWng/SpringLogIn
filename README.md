@@ -24,6 +24,10 @@ A demo project showing how to do basic login with cookies in Spring
 	
 	This would return 200 if the cookie is correct, 401 if not cookie is in the GET call
 
+4. curl -i --header "Accept:application/json" -X GET -b ./cookies.txt http://localhost:8080/logout
+
+    This would logout, 302 is returned
+
 
 
 
